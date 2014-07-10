@@ -27,5 +27,14 @@ public class TestPicklist
         options.add(new SelectOption(a.Name,a.Name));
         return options;
     }
+    
+    public List<SelectOption> getItems4() 
+    {
+        List<SelectOption> options = new List<SelectOption>();
+        List<Account> accList = [select name from account where  name != :select2 limit 10];
+        for(account a : accList)
+        options.add(new SelectOption(a.Name,a.Name));
+        return options;
+    }
 
 }
