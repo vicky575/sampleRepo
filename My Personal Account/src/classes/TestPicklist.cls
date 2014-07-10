@@ -31,7 +31,7 @@ public class TestPicklist
     public List<SelectOption> getItems4() 
     {
         List<SelectOption> options = new List<SelectOption>();
-        List<Account> accList = [select name from account where  name != :select2 and name=:select1 limit 10];
+        List<Account> accList = [select name from account where name=:select1 limit 10];
         for(account a : accList)
         options.add(new SelectOption(a.Name,a.Name));
         return options;
