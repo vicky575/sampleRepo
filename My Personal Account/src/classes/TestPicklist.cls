@@ -34,6 +34,7 @@ public class TestPicklist
         List<Account> accList = [select name from account where  name = :select2 And name=:select1 limit 10];
         for(account a : accList)
         options.add(new SelectOption(a.Name,a.Name));
+        system.debug('options========'+options);
         return options;
     }
 
